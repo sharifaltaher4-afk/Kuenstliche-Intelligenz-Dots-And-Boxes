@@ -1,0 +1,33 @@
+∧
+├── ∧
+│   ├── ∧
+│   │   ├── ∨
+│   │   │   ├── ∨
+│   │   │   │   ├── A
+│   │   │   │   └── B
+│   │   │   └── C
+│   │   ├── ∨
+│   │   │   ├── ∨
+│   │   │   │   ├── A
+│   │   │   │   └── B
+│   │   │   └── ¬C
+│   │   │       └── C
+│   │   └── ∨
+│   │       ├── ∨
+│   │       │   ├── ¬A
+│   │       │   │   └── A
+│   │       │   └── B
+│   │       └── C
+│   └── ∨
+│       ├── ∨
+│       │   ├── ¬A
+│       │   │   └── A
+│       │   └── ¬B
+│       │       └── B
+│       └── C
+
+Die Hauptwurzel und die Zwischenknoten mit & sind Instanzen der Klasse AndExpression.
+Die inneren Knoten in den Klammern mit | sind Instanzen der Klasse OrExpression.
+Die Negationen - sind NotExpression.
+Die Blätter (A, B, C) sind ConstantExpression.
+Operatorrangfolge: Klammern zuerst, dann -, dann &, dann |. Bei gleicher Priorität (wie den drei &) wird strikt von links nach rechts gruppiert.
